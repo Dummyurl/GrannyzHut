@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:fitsSystemWindows="true"
+    android:id="@+id/cod_layout">
+
+    <ScrollView
+        android:id="@+id/scMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/rlMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/rlContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true"
+                android:padding="30dp">
+
+                <TextView
+                    android:id="@+id/tvLoginto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/app_name"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/etMobNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edt_bg"
+                    android:inputType="phone"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:hint="@string/mobile_no_hint_text"
+                    android:maxLength="10"
+                    android:drawableLeft="@drawable/ic_mobile"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@android:color/white"
+                    android:paddingLeft="10dp"/>
+
+                <EditText
+                    android:id="@+id/etPwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edt_bg"
+                    android:inputType="textPassword"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:hint="@string/password_hint_text"
+                    android:maxLength="10"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@android:color/white"
+                    android:paddingLeft="10dp"/>
+
+
+
+
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColorHint="@color/login_edittext_hint_color"-->
+                    <!--app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">-->
+
+                    <!--<EditText-->
+                        <!--android:id="@+id/etMobNo"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:backgroundTint="@android:color/white"-->
+                        <!--android:inputType="phone"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:textColor="@color/login_edittext_text_color"-->
+                        <!--android:hint="@string/mobile_no_hint_text"-->
+                        <!--android:maxLength="10"-->
+                        <!--android:drawableLeft="@drawable/ic_mobile"-->
+                        <!--android:drawablePadding="10dp"-->
+                        <!--android:paddingLeft="10dp"/>-->
+
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColorHint="@color/login_edittext_hint_color"-->
+                    <!--app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">-->
+
+                    <!--<EditText-->
+                        <!--android:id="@+id/etPwd"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:backgroundTint="@android:color/white"-->
+                        <!--android:inputType="textEmailAddress"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:textColor="@color/login_edittext_text_color"-->
+                        <!--android:hint="@string/password_hint_text"-->
+                        <!--android:maxLength="10"-->
+                        <!--android:drawableLeft="@drawable/ic_email"-->
+                        <!--android:drawablePadding="10dp"-->
+                        <!--android:paddingLeft="10dp"/>-->
+
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <TextView
+                    android:id="@+id/tvForgotPwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/frgt_pswrd"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center_horizontal" />
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_btn_text"
+                    android:textColor="@android:color/white"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:background="@drawable/btn_bg" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp">
+
+                    <ImageButton
+                        android:id="@+id/imbFacebook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:src="@drawable/btn_facebook" />
+
+                    <ImageButton
+                        android:id="@+id/imbGoogle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:src="@drawable/btn_google" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvRegNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="?attr/selectableItemBackground"
+                    android:maxLines="1"
+                    android:text="@string/register_txt"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

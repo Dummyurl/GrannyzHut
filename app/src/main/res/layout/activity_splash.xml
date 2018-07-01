@@ -1,0 +1,25 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:pv="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash" />
+
+    <com.complexgene.eatbud.views.particleview.ParticleView
+        android:id="@+id/pv_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        pv:pv_host_text="Grannyz"
+        pv:pv_particle_text="HuT"
+        pv:pv_text_color="#212121"
+        pv:pv_text_anim_time="1000"
+        pv:pv_spread_anim_time="800"
+        pv:pv_host_text_anim_time="1000" />
+
+</FrameLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFC033</color>
+    <color name="colorPrimaryDark">#FF9800</color>
+    <color name="colorAccent">#FFC033</color>
+
+    <color name="app_theme">#212121</color>
+
+    <color name="title_text">#4c4c4c</color>
+
+    <color name="login_edittext_text_color">#FFC033</color>
+    <color name="login_edittext_hint_color">#FFFFFF</color>
+    <color name="login_edittext_undrln_color">#E1E1E1</color>
+    <color name="login_edittext_undrln_color_active">#FFFFFF</color>
+    <color name="forgot_pwd_color">#4F4F4F</color>
+    <color name="social_text_color">#2A8DC6</color>
+
+    <color name="border_color">#F3F3F3</color>
+    <color name="drawable_color">#FF000000</color>
+
+    <color name="blue_grey">#455A64</color>
+    <color name="red">#F44336</color>
+    <color name="pink">#E91E63</color>
+    <color name="purple">#9C27B0</color>
+    <color name="deep_purple">#673AB7</color>
+    <color name="indigo">#3F51B5</color>
+    <color name="blue">#2196F3</color>
+    <color name="light_blue">#03A9F4</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="teal">#009688</color>
+    <color name="green">#4CAF50</color>
+    <color name="light_green">#8BC34A</color>
+    <color name="lime">#CDDC39</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="amber">#FFC107</color>
+    <color name="orange">#FF9800</color>
+    <color name="deep_orange">#FF5722</color>
+    <color name="brown">#795548</color>
+    <color name="grey">#E0E0E0</color>
+
+    <color name="black_trans80">#33000000</color>
+
+    <color name="indicator_unselected">#4D000000</color>
+
+
+</resources>

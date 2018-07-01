@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:contentInsetStartWithNavigation="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true"
+                android:paddingTop="30dp"
+                android:paddingBottom="40dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp">
+
+                <FrameLayout
+                    android:id="@+id/fl_prfl_img"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center_horizontal">
+
+                    <com.complexgene.eatbud.views.CircularImageView
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/profile_image_placeholder"
+                        app:civ_border_color="@color/border_color"
+                        app:civ_border_width="1dp"/>
+
+                    <ImageButton
+                        android:id="@+id/imb_take_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_upload"
+                        android:layout_gravity="bottom|right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@null"
+                        android:visibility="invisible"/>
+
+                </FrameLayout>
+
+
+
+                <EditText
+                    android:id="@+id/etFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edt_bg"
+                    android:drawableLeft="@drawable/ic_name"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/name_hint_text"
+                    android:textColorHint="@android:color/white"
+                    android:inputType="textCapWords"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/login_edittext_text_color"
+                    android:textSize="12sp"
+                    android:drawableTint="@android:color/white"/>
+
+                <EditText
+                    android:id="@+id/etMobNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edt_bg"
+                    android:inputType="phone"
+                    android:textSize="12sp"
+                    android:textColor="@color/login_edittext_text_color"
+                    android:textColorHint="@android:color/white"
+                    android:hint="@string/mobile_no_hint_text"
+                    android:maxLength="10"
+                    android:drawableLeft="@drawable/ic_mobile"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@android:color/white"
+                    android:paddingLeft="10dp"/>
+
+
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edt_bg"
+                    android:inputType="textEmailAddress"
+                    android:textSize="12sp"
+                    android:textColor="@color/login_edittext_text_color"
+                    android:textColorHint="@android:color/white"
+                    android:hint="@string/email_hint_text"
+                    android:maxLength="10"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@android:color/white"
+                    android:paddingLeft="10dp"/>
+
+                <EditText
+                    android:id="@+id/etPwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edt_bg"
+                    android:inputType="textPassword"
+                    android:textSize="12sp"
+                    android:textColor="@color/login_edittext_text_color"
+                    android:textColorHint="@android:color/white"
+                    android:hint="@string/password_hint_text"
+                    android:maxLength="10"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@android:color/white"
+                    android:paddingLeft="10dp"/>
+
+
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:textColorHint="@color/login_edittext_hint_color"-->
+                    <!--app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">-->
+
+                    <!--<EditText-->
+                        <!--android:id="@+id/etFirstName"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:backgroundTint="@android:color/white"-->
+                        <!--android:drawableLeft="@drawable/ic_name"-->
+                        <!--android:drawablePadding="10dp"-->
+                        <!--android:hint="@string/name_hint_text"-->
+                        <!--android:inputType="textCapWords"-->
+                        <!--android:paddingLeft="10dp"-->
+                        <!--android:textColor="@color/login_edittext_text_color"-->
+                        <!--android:textSize="12sp" />-->
+
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:textColorHint="@color/login_edittext_hint_color"-->
+                    <!--app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">-->
+
+                    <!--<EditText-->
+                        <!--android:id="@+id/etMobNo"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:backgroundTint="@android:color/white"-->
+                        <!--android:inputType="phone"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:textColor="@color/login_edittext_text_color"-->
+                        <!--android:hint="@string/mobile_no_hint_text"-->
+                        <!--android:maxLength="10"-->
+                        <!--android:drawableLeft="@drawable/ic_mobile"-->
+                        <!--android:drawablePadding="10dp"-->
+                        <!--android:paddingLeft="10dp"/>-->
+
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:textColorHint="@color/login_edittext_hint_color"-->
+                    <!--app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">-->
+
+                    <!--<EditText-->
+                        <!--android:id="@+id/etEmail"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:backgroundTint="@android:color/white"-->
+                        <!--android:inputType="textEmailAddress"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:textColor="@color/login_edittext_text_color"-->
+                        <!--android:hint="@string/email_hint_text"-->
+                        <!--android:maxLength="10"-->
+                        <!--android:drawableLeft="@drawable/ic_email"-->
+                        <!--android:drawablePadding="10dp"-->
+                        <!--android:paddingLeft="10dp"/>-->
+
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:textColorHint="@color/login_edittext_hint_color"-->
+                    <!--app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">-->
+
+                    <!--<EditText-->
+                        <!--android:id="@+id/etPwd"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:backgroundTint="@android:color/white"-->
+                        <!--android:inputType="textEmailAddress"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:textColor="@color/login_edittext_text_color"-->
+                        <!--android:hint="@string/password_hint_text"-->
+                        <!--android:maxLength="10"-->
+                        <!--android:drawableLeft="@drawable/ic_email"-->
+                        <!--android:drawablePadding="10dp"-->
+                        <!--android:paddingLeft="10dp"/>-->
+
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <Button
+                    android:id="@+id/btnContinue"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/continue_btn_text"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/btn_bg" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

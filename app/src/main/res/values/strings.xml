@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">GrannyzHut</string>
+    <string name="map_api_key">AIzaSyB7Ing6GdkgoE_QOKXBirnpj3KfSOdnbY0</string>
+
+	<string name="section_format">Page %1$d</string>
+
+	<string name="name_hint_text">Name</string>
+	<string name="email_hint_text">Email Address</string>
+	<string name="mobile_no_hint_text">Mobile No</string>
+	<string name="password_hint_text">Password</string>
+	<string name="login_btn_text">Login</string>
+	<string name="continue_btn_text">Continue</string>
+	<string name="frgt_pswrd">Forgot Password?</string>
+	<string name="register_txt">Don\'t have an account? <u>Register Now!</u></string>
+
+	<string name="leave_a_comment">Leave a comment...</string>
+	<string name="add_address">Add address</string>
+
+	<string name="add_btn_text">Add</string>
+
+    <string name="lorem">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		In mollis est vitae erat laoreet consectetur. Mauris dui mauris,
+		dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,
+		in elementum arcu ultricies nec.Morbi tincidunt nisl lacinia, placerat nisi eget, luctus tortor.
+		Morbi efficitur dictum leo, sit amet volutpat lorem sodales nec. Quisque et erat et turpis fringilla condimentum.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor vulputate libero vitae iaculis.
+		Curabitur id blandit quam. Praesent massa ante, pulvinar vitae sagittis commodo, scelerisque porttitor eros.
+		Mauris suscipit a enim nec congue. Mauris tristique cursus aliquet. Nunc quis hendrerit nunc. Praesent tristique tellus purus,
+		a pretium ex gravida id. Cras laoreet malesuada nulla, at bibendum metus ultricies a. Fusce eu ornare arcu. Proin ut molestie est.
+		Vestibulum quis vehicula erat. Nam sed tempus nibh. Sed tortor ante, maximus venenatis odio sed, ultricies maximus lectus.
+		Aliquam sed volutpat ligula. Integer bibendum, magna ac lacinia suscipit,
+		risus libero rutrum justo, sed tempus augue tellus eget est. Curabitur convallis augue nisl,
+		id efficitur urna posuere faucibus. Ut sed egestas nulla, eu finibus metus. Nunc a arcu ante.
+		Aenean ullamcorper dolor non condimentum congue. Aenean mauris nunc, pellentesque at placerat vitae,
+		aliquet quis orci. Curabitur maximus augue ut bibendum sagittis.
+	</string>
+
+    <string name="about">
+		This example shows different CoordinatorLayout usage examples, like the use of \'anchor\' in views,
+		flexible space and some more tips.\n\n
+
+		This code has also been used as an example for the presentation given at the Spanish GDG Summit 2015:
+		\'Tools and tips of the trade for the Android developer\'. Whose slides will be published soon :)
+
+		\n\n Enjoy
+	</string>
+    <string name="payment_methods">Payment methods</string>
+	<string name="delevering_food_to">Delevering food to</string>
+	<string name="promo_code">Promo code</string>
+	<string name="have_a_promo_code_enter_it_here"> Have a promo code? Enter it here</string>
+    <string name="your_cart">Your Cart</string>
+	<string name="apply">Apply</string>
+	<string name="change">Change</string>
+    <string name="click_here_to_add_address">Click here to add Address</string>
+    <string name="pls_add_address">Please add Address first</string>
+	<string name="description">Description</string>
+    <string name="standard_price">Standard Price : ₹</string>
+	<string name="small_price">Small Price : ₹</string>
+
+
+	<array name="spinner_list">
+			<item>home</item>
+			<item>settings</item>
+			<item>logout</item>
+		</array>
+
+	<array name="header_text">
+		<item>ITS HOME KITCHEN</item>
+		<item>WE CARE HEALTH</item>
+		<item>LOW PRICE &amp; DISCOUNT</item>
+	</array>
+
+	<array name="long_text">
+		<item>Food items, directly made out of our home kitchen with super fresh raw items with stringent quality check to provide you the best hygienic food and taste you wanted.</item>
+		<item>With 100% food grade, 100% microwaveable, 100% hygienic food plates, you get the best quality that can be provided. Proper calorie analysis is done to keep you healthy.</item>
+		<item>We offer you the best price in market, so that you can afford it. Eat foods that you always wanted. Not Yet!! Great discounts on top of that for early birds. Order quickly!!</item>
+	</array>
+
+
+</resources>

@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "836077687651",
+    "firebase_url": "https://eatbud-8f16a.firebaseio.com",
+    "project_id": "eatbud-8f16a",
+    "storage_bucket": "eatbud-8f16a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836077687651:android:908f48aa6c770d26",
+        "android_client_info": {
+          "package_name": "com.complexgene.eatbud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836077687651-9d0njvhtlacummlr7b8a9jq85q0uj9qt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.complexgene.eatbud",
+            "certificate_hash": "ac7e992e1a5dbc33c144daf2e71a9f3c3216188d"
+          }
+        },
+        {
+          "client_id": "836077687651-pi9ndbp1m8bb99c3rv311ntatjo9gjkq.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "836077687651-pi9ndbp1m8bb99c3rv311ntatjo9gjkq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7Ing6GdkgoE_QOKXBirnpj3KfSOdnbY0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836077687651-pi9ndbp1m8bb99c3rv311ntatjo9gjkq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:contentPadding="8dp"
+    app:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tvOrderTime">
+
+        <com.complexgene.eatbud.views.CircularImageView
+            android:id="@+id/imvItem"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/splash"
+            app:civ_border_width="0dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imvItem"
+            android:layout_marginLeft="8dp">
+
+            <TextView
+                android:id="@+id/tvItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tvItemPrice"
+                android:drawableLeft="@drawable/ic_veg"
+                android:drawablePadding="5dp"
+                android:text="Chicken Honululu"
+                android:textSize="16sp"
+                android:textColor="@color/title_text"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tvItemType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_veg"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="VEG"
+                android:textSize="10sp"
+                android:textColor="@color/title_text"
+                android:textAllCaps="true"
+                android:visibility="gone"/>
+
+            <com.complexgene.eatbud.views.ExpandableTextView
+                android:id="@+id/tvItemDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/lorem"
+                android:textSize="12sp"
+                android:maxLines="2"
+                android:textColor="@color/title_text"
+                android:ellipsize="end"
+                app:animation_duration="750"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+

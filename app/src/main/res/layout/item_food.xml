@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
+    android:foreground="?attr/selectableItemBackground"
+    card_view:cardElevation="5dp"
+    card_view:cardCornerRadius="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/veg_thali"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/thumbnail"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:drawablePadding="5dp"
+                android:textColor="@color/title_text"
+                android:textSize="16sp"
+                android:text="Veg thali"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <RelativeLayout
+                android:id="@+id/rlStandard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTitle">
+
+                <TextView
+                    android:id="@+id/tvStandardPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/standard_price"
+                    android:textSize="12sp"/>
+
+                <LinearLayout
+                    android:id="@+id/llAdd"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/qty_bg"
+                    android:clickable="true">
+
+                    <Button
+                        android:id="@+id/btnAddStandard"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/qty_bg"
+                        android:text="@string/add_btn_text"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/white"
+                        android:textAllCaps="false"
+                        android:visibility="visible"/>
+
+                    <ImageView
+                        android:id="@+id/imvMStandard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/colorPrimary"
+                        android:src="@drawable/ic_minus"/>
+
+                    <TextView
+                        android:id="@+id/tvQtyStandard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_marginBottom="1.5dp"
+                        android:padding="3dp"
+                        android:background="@android:color/white"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"/>
+
+                    <ImageView
+                        android:id="@+id/imvPStandard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/colorPrimary"
+                        android:src="@drawable/ic_plus"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlStandard"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvSmallPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="10dp"
+                    android:text="@string/small_price"
+                    android:textSize="12sp"/>
+
+                <LinearLayout
+                    android:id="@+id/rlAddSmall"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/qty_bg"
+                    android:clickable="true">
+
+                    <Button
+                        android:id="@+id/btnAddSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/qty_bg"
+                        android:text="@string/add_btn_text"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/white"
+                        android:textAllCaps="false"
+                        android:visibility="visible"/>
+
+                    <ImageView
+                        android:id="@+id/imvMSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/colorPrimary"
+                        android:src="@drawable/ic_minus"/>
+
+                    <TextView
+                        android:id="@+id/tvQtySmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_marginBottom="1.5dp"
+                        android:padding="3dp"
+                        android:background="@android:color/white"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"/>
+
+                    <ImageView
+                        android:id="@+id/imvPSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/colorPrimary"
+                        android:src="@drawable/ic_plus"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
