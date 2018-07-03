@@ -29,16 +29,18 @@
            android:text="Order#@A123"/>
 
        <TextView
-           android:id="@+id/tvOrderTime"
+           android:id="@+id/tvOrderTimeStamp"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_below="@+id/tvOrderId"
            android:text="Ordered at:6:30 pm"/>
 
        <TextView
-           android:id="@+id/tvStatus"
+           android:id="@+id/tvOrderStatus"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
+           android:background="@drawable/round_tv_orderstatus"
+           android:layout_marginBottom="2dp"
            android:layout_alignParentRight="true"
            android:paddingRight="10dp"
            android:text="Delivered"
@@ -51,7 +53,7 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_alignParentRight="true"
-           android:layout_below="@+id/tvStatus"
+           android:layout_below="@+id/tvOrderStatus"
            android:background="@drawable/round_tv_bg"
            android:text="Feedback"
            android:textSize="10sp"
@@ -71,43 +73,43 @@
            android:visibility="gone"/>
 
        <View
-           android:id="@+id/view1"
+           android:id="@+id/orderedItems"
            android:layout_width="match_parent"
            android:layout_height="1dp"
-           android:layout_below="@+id/tvOrderTime"
+           android:layout_below="@+id/tvFeedback"
            android:layout_marginTop="5dp"
            android:background="@color/colorPrimary"/>
 
        <android.support.v7.widget.RecyclerView
-           android:id="@+id/rvItems"
+           android:id="@+id/rvOrderedItems"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:layout_below="@+id/view1"
+           android:layout_below="@+id/orderedItems"
            android:nestedScrollingEnabled="false"
            android:scrollbars="none"
            app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
 
        <View
-           android:id="@+id/view2"
+           android:id="@+id/orderItemsAndTotalItemsDividerBar"
            android:layout_width="match_parent"
            android:layout_height="1dp"
-           android:layout_below="@+id/rvItems"
+           android:layout_below="@+id/rvOrderedItems"
            android:background="@color/colorPrimary"/>
 
        <TextView
            android:id="@+id/tvItemCount"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_below="@+id/view2"
-           android:text="6 Items"/>
+           android:layout_below="@+id/orderItemsAndTotalItemsDividerBar"
+           android:text="0 Item"/>
 
        <TextView
            android:id="@+id/tvTotalPrice"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_below="@+id/view2"
+           android:layout_below="@+id/orderItemsAndTotalItemsDividerBar"
            android:layout_alignParentRight="true"
-           android:text="Rs 1000.00"/>
+           android:text="Rs 0.00"/>
 
    </RelativeLayout>
 
