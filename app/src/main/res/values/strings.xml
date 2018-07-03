@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">GrannyzHut</string>
     <string name="map_api_key">AIzaSyB7Ing6GdkgoE_QOKXBirnpj3KfSOdnbY0</string>
+    <string name="facebook_app_id">AIzaSyB7Ing6GdkgoE_QOKXBirnpj3KfSOdnbY0</string>
 
 	<string name="section_format">Page %1$d</string>
 

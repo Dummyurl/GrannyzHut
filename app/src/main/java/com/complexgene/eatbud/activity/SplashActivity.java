@@ -104,8 +104,8 @@ public class SplashActivity extends AppCompatActivity {
 //            Pass your loaded data here using Intent
 
 //            intent.putExtra("data_key", "");
-//            startActivity(intent);
-//            finish();
+            startActivity(intent);
+            finish();
         }
     }
 }

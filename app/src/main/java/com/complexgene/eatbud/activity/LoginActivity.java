@@ -15,6 +15,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.complexgene.eatbud.R;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -24,6 +32,11 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 
@@ -43,13 +56,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static final int RC_SIGN_IN = 001;
 
     private GoogleApiClient mGoogleApiClient;
-//    private CallbackManager callbackManager;
+    private CallbackManager callbackManager;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().getDecorView().setSystemUiVisibility(
@@ -74,6 +90,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         imbGoogle=findViewById(R.id.imbGoogle);
         imbGoogle.setOnClickListener(this);
+
+        handleFacebookSignInResult();
 
     }
 
@@ -110,6 +128,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
                 break;
             case R.id.imbFacebook:
+                LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("email", "user_birthday","user_gender"));
 //                LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("email", "user_birthday"));
                 break;
         }
@@ -133,7 +152,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-//        callbackManager.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
 
         System.out.println("onActivityResult");
 
@@ -184,4 +203,92 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             });
         }
     }
+
+    private void handleFacebookSignInResult() {
+        LoginManager.getInstance().registerCallback(callbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+
+                        //String accessToken = loginResult.getAccessToken().getToken();
+                        //String userId = loginResult.getAccessToken().getUserId();
+
+                        GraphRequest graphRequest = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                            @Override
+                            public void onCompleted(JSONObject jsonObject, GraphResponse graphResponse) {
+                                try {
+
+                                    String imageUrl="";
+                                    System.out.println("jsonObject:"+jsonObject.toString());
+                                    String id = jsonObject.getString("id");
+                                    String name = jsonObject.getString("name");
+                                    String email = jsonObject.optString("email");
+                                    String birthday = jsonObject.optString("birthday");/*08/15/1968*/
+                                    String gender = jsonObject.optString("gender");
+
+                                    if (jsonObject.has("picture")) {
+                                        JSONObject picObj = jsonObject.optJSONObject("picture");
+                                        JSONObject dataObj = picObj.optJSONObject("data");
+                                        imageUrl = dataObj.optString("url");
+                                    }
+
+                                    System.out.println("id:"+id);
+                                    System.out.println("name:"+name);
+                                    System.out.println("email:"+email);
+                                    System.out.println("imageUrl:"+imageUrl);
+                                    System.out.println("birthday:"+birthday);
+                                    System.out.println("gender:"+gender);
+
+                                    if(birthday!=null){
+                                        if(!birthday.isEmpty()){
+                                            try {
+                                                birthday=new SimpleDateFormat("yyyy-MM-dd")
+                                                        .format(new SimpleDateFormat("MM/dd/yyyy")
+                                                                .parse(birthday));
+                                            } catch (ParseException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    }
+
+                                    if(gender!=null){
+                                        if(!gender.isEmpty()){
+                                            gender=gender.substring(0, 1).toUpperCase() + gender.substring(1);
+                                        }
+
+                                    }
+
+                                    LoginManager.getInstance().logOut();
+
+//                                    socialLogin(AppConstant.FB_LOGIN,id,name,email,gender,birthday,"");
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        });
+                        Bundle parameters = new Bundle();
+                        parameters.putString("fields", "id,first_name,last_name,email,name,birthday,gender,picture.type(large)");
+                        graphRequest.setParameters(parameters);
+                        graphRequest.executeAsync();
+
+                        return;
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        // App code
+                        return;
+                    }
+
+                    @Override
+                    public void onError(FacebookException exception) {
+                        // App code
+                        return;
+                    }
+                });
+    }
+
+
 }
