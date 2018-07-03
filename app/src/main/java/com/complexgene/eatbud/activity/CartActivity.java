@@ -1,28 +1,24 @@
 package com.complexgene.eatbud.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.complexgene.eatbud.R;
-import com.complexgene.eatbud.adapter.AddressAdapter;
 import com.complexgene.eatbud.adapter.CartAdapter;
 import com.complexgene.eatbud.model.Address;
 import com.complexgene.eatbud.util.AppConstant;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,6 +29,9 @@ import java.util.List;
 public class CartActivity extends AppCompatActivity {
 
     private TextView tvAddress;
+    private Button btnCheckOut;
+    //#------OrderDetailsElements--------#
+
 
 
     private static final int OPEN_ADDRESS_INTENT=101;
@@ -52,6 +51,8 @@ public class CartActivity extends AppCompatActivity {
             }
         });
 
+        btnCheckOut = findViewById(R.id.btnCheckOut);
+
         RecyclerView rvCart=findViewById(R.id.rvCart);
         rvCart.setAdapter(new CartAdapter(this));
         rvCart.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
@@ -65,6 +66,48 @@ public class CartActivity extends AppCompatActivity {
         });
 
         getDefaultAddress();
+
+        Intent intentOrderConfirmation = new Intent(this, OrderConfirmationActivity.class);
+        Intent intentErrorInCreateOrder = new Intent(this, OrderConfirmationActivity.class);
+
+        btnCheckOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(createOrder())
+                    startActivity(intentOrderConfirmation);
+                else
+                    startActivity(intentErrorInCreateOrder);
+            }
+        });
+    }
+
+    private boolean createOrder() {return true;
+//        AddressDetails addressDetails = new AddressDetails();
+//        addressDetails.setHouseNumber();
+//        OrderDetails user = new User();
+//        user.setUserName(name);
+//        user.setMobileNumber(mobileNumber);
+//        user.setEmailId(emailAddress);
+//        user.setPassWord(password);
+//        user.setRewardPoints(0);
+//
+//        ApiClient.getClient(this).create(ApiInterface.class).createUser(user)
+//                .enqueue(new Callback<ResponseBody>() {
+//                    @Override
+//                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                        try {
+//                            if(response.code() == 200){
+//                                Log.i("ProfileActivity","Registered..");
+//                                startActivity(mainActivityIntent);
+//                            }
+//                        } catch (Exception e) {
+//                            Log.i("ProfileActivity","Not Registered..");
+//                            System.out.println("Not Registered.." + e);
+//                        }
+//                    }
+//                    @Override
+//                    public void onFailure(Call<ResponseBody> call, Throwable t) {}
+//                });
     }
 
     @Override
@@ -96,6 +139,7 @@ public class CartActivity extends AppCompatActivity {
         }
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -107,6 +151,8 @@ public class CartActivity extends AppCompatActivity {
 
         }
     }
+
+
 
 
 }

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/cod_layout">
 
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -187,7 +188,7 @@
     </android.support.v4.widget.NestedScrollView>
 
     <Button
-        android:id="@+id/btnOrder"
+        android:id="@+id/btnCheckOut"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_gravity="bottom"
